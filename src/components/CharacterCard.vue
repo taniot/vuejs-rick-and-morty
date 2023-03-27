@@ -1,14 +1,23 @@
 <script>
     export default {
-        name: 'CharacterCard'
+        name: 'CharacterCard',
+        props: {
+            img: String,
+            name: String,
+            status: String,
+            species: String
+        }
     }
 </script>
 
 
 <template>
-    <div>   
-        Personaggio Card
-    </div>
+    <article class="text-center">   
+        <div class="img"><img class="rounded-circle img-fluid" :src="img"></div>
+        <h3>{{  name }}</h3>
+        <div>{{ status}}</div>
+        <div>{{ species }}</div>
+    </article>
 </template>
 
 
