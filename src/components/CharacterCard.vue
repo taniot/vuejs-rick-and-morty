@@ -22,5 +22,7 @@
 
 
 <style lang="scss" scoped>
-
+    article {
+        height: 100%;
+    }
 </style>
