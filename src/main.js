@@ -1,5 +1,8 @@
 import { createApp } from 'vue'
+//import default scss
 import './assets/scss/main.scss';
+// Import all of Bootstrap's JS
+import * as bootstrap from 'bootstrap'
 
 //bootstrap
 // import * as bootstrap from 'bootstrap'
