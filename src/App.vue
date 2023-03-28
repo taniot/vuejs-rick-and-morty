@@ -17,20 +17,36 @@ export default {
       store
     }
   },
-  created() {
-    axios.get('https://rickandmortyapi.com/api/character')
+  methods: {
+    search(){
+      axios.get('https://rickandmortyapi.com/api/character', {
+        params: {
+          name: store.searchKey,
+          status: store.searchStatus
+        }
+      })
       .then((response) => {
         console.log(response);
         this.store.characters = response.data.results;
         this.store.charactersFound = response.data.results.length;
       })
+      .catch((error) => {
+        console.log(error);
+        this.store.characters = [];
+        this.store.charactersFound = 0;
+      })
+    }
+  },
+
+  created() {
+    this.search();
   }
 }
 </script>
 
 <template>
   <AppHeader />
-  <AppMain />
+  <AppMain @qualcosa="search" />
   <AppFooter />
 </template>
 
